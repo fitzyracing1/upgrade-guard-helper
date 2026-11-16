@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "upgrade-guard-helper"
+version = "0.1.0"
+description = "Diff default parameters and config constants (knobs) between two versions of a dependency. Rules and code, no AI, offline for local trees."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Joshua Almeida" }]
+requires-python = ">=3.10"
+keywords = ["knobs", "dependencies", "cli", "offline", "no-ai", "upgrades"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/sponsors/fitzyracing1"
+Repository = "https://github.com/fitzyracing1/upgrade-guard-helper"
+"Knobs definition" = "https://github.com/fitzyracing1/knobs"
+
+[project.scripts]
+upgrade-guard-helper = "upgrade_guard_helper.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
